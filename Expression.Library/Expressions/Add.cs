@@ -11,6 +11,7 @@ namespace Expression.Library
         public List<ExpressionBase> Expressions { get; private set; } = new List<ExpressionBase>();
 
         public Add() { }
+        public Add(params ExpressionBase[] list) { Expressions.AddRange(list); }
         public Add(List<ExpressionBase> expressions) { Expressions.AddRange(expressions); }
 
         public void AddExpression(ExpressionBase expression)

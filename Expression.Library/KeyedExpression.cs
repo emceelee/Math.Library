@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace Expression.Library
 {
+    //used in a complex list of KeyedExpressions, where previous Expression results can be used to calculate next results
     public class KeyedExpression : ExpressionBase
     {
         public char Token { get; private set; }
