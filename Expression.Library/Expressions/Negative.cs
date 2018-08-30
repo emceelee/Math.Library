@@ -24,5 +24,10 @@ namespace Expression.Library
         {
             return Expression.Variables();
         }
+
+        public override string ToString()
+        {
+            return "-" + Expression.ToString();
+        }
     }
 }

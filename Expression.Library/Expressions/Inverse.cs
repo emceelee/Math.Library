@@ -6,33 +6,28 @@ using System.Threading.Tasks;
 
 namespace Expression.Library
 {
-    public class Constant : ExpressionBase
+    public class Inverse : ExpressionBase
     {
-        public double Value { get; private set; }
+        public ExpressionBase Expression { get; private set; }
 
-        public Constant(double value)
+        public Inverse(ExpressionBase expression)
         {
-            Value = value;
+            Expression = expression;
         }
 
         public override double Evaluate(VariableReplacements replacements)
         {
-            return Value;
+            return 1 / Expression.Evaluate(replacements);
         }
 
         public override IEnumerable<Variable> Variables()
         {
-            yield break;
-        }
-
-        public static implicit operator Constant(double value)
-        {
-            return new Constant(value);
+            return Expression.Variables();
         }
 
         public override string ToString()
         {
-            return Value.ToString();
+            return "1/" + Expression.ToString();
         }
     }
 }

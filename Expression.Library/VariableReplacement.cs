@@ -8,10 +8,10 @@ namespace Expression.Library
 {
     public class VariableReplacement
     {
-        public char Token { get; private set; }
+        public string Token { get; private set; }
         public double Value { get; private set; }
 
-        public VariableReplacement(char token, double value)
+        public VariableReplacement(string token, double value)
         {
             Token = token;
             Value = value;

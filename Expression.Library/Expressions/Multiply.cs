@@ -6,13 +6,13 @@ using System.Threading.Tasks;
 
 namespace Expression.Library
 {
-    public class Add : ExpressionBase
+    public class Multiply : ExpressionBase
     {
         public List<ExpressionBase> Expressions { get; private set; } = new List<ExpressionBase>();
 
-        public Add() { }
-        public Add(params ExpressionBase[] list) { Expressions.AddRange(list); }
-        public Add(List<ExpressionBase> expressions) { Expressions.AddRange(expressions); }
+        public Multiply() { }
+        public Multiply(params ExpressionBase[] list) { Expressions.AddRange(list); }
+        public Multiply(List<ExpressionBase> expressions) { Expressions.AddRange(expressions); }
 
         public void AddExpression(ExpressionBase expression)
         {
@@ -21,10 +21,10 @@ namespace Expression.Library
 
         public override double Evaluate(VariableReplacements replacements)
         {
-            double result = 0;
+            double result = 1;
             foreach (ExpressionBase ex in Expressions)
             {
-                result += ex.Evaluate(replacements);
+                result *= ex.Evaluate(replacements);
             }
 
             return result;
@@ -45,7 +45,7 @@ namespace Expression.Library
 
         public override string ToString()
         {
-            return "(" + String.Join(" + ", Expressions.Select(ex => ex.ToString())) + ")";
+            return "(" + String.Join(" * ", Expressions.Select(ex => ex.ToString())) + ")";
         }
     }
 }

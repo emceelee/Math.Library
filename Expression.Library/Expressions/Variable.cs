@@ -8,9 +8,9 @@ namespace Expression.Library
 {
     public class Variable : ExpressionBase
     {
-        public char Token { get; private set; }
+        public string Token { get; private set; }
 
-        public Variable(char token)
+        public Variable(string token)
         {
             Token = token;
         }
@@ -23,6 +23,11 @@ namespace Expression.Library
         public override IEnumerable<Variable> Variables()
         {
             yield return this;
+        }
+
+        public override string ToString()
+        {
+            return Token.ToString();
         }
     }
 }

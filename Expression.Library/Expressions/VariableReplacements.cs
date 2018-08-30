@@ -8,11 +8,11 @@ namespace Expression.Library
 {
     public class VariableReplacements
     {
-        private Dictionary<char, VariableReplacement> _replacements;
+        private Dictionary<string, VariableReplacement> _replacements;
 
         public VariableReplacements()
         {
-            _replacements = new Dictionary<char, VariableReplacement>();
+            _replacements = new Dictionary<string, VariableReplacement>();
         }
         public VariableReplacements(List<VariableReplacement> replacements)
         {
@@ -31,7 +31,7 @@ namespace Expression.Library
             }
         }
 
-        public double GetReplacement(char token)
+        public double GetReplacement(string token)
         {
             VariableReplacement replacement = null;
             if(_replacements.TryGetValue(token, out replacement))
