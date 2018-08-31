@@ -11,7 +11,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Expression.Library\Expression.Library.csproj" />
+    <ProjectReference Include="..\Emceelee.Math.Expression\Emceelee.Math.Expression.csproj" />
   </ItemGroup>
 
   <ItemGroup>

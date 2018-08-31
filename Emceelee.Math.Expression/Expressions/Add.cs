@@ -4,15 +4,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Expression.Library
+namespace Emceelee.Math.Expression
 {
-    public class Multiply : ExpressionBase
+    public class Add : ExpressionBase
     {
         public List<ExpressionBase> Expressions { get; private set; } = new List<ExpressionBase>();
 
-        public Multiply() { }
-        public Multiply(params ExpressionBase[] list) { Expressions.AddRange(list); }
-        public Multiply(List<ExpressionBase> expressions) { Expressions.AddRange(expressions); }
+        public Add() { }
+        public Add(params ExpressionBase[] list) { Expressions.AddRange(list); }
+        public Add(List<ExpressionBase> expressions) { Expressions.AddRange(expressions); }
 
         public void AddExpression(ExpressionBase expression)
         {
@@ -21,10 +21,10 @@ namespace Expression.Library
 
         public override double Evaluate(VariableReplacements replacements)
         {
-            double result = 1;
+            double result = 0;
             foreach (ExpressionBase ex in Expressions)
             {
-                result *= ex.Evaluate(replacements);
+                result += ex.Evaluate(replacements);
             }
 
             return result;
@@ -45,7 +45,7 @@ namespace Expression.Library
 
         public override string ToString()
         {
-            return "(" + String.Join(" * ", Expressions.Select(ex => ex.ToString())) + ")";
+            return "(" + String.Join(" + ", Expressions.Select(ex => ex.ToString())) + ")";
         }
     }
 }

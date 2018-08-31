@@ -1,10 +1,10 @@
 using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-using Expression.Library;
+using Emceelee.Math.Expression;
 using System.Collections.Generic;
 
-namespace Expression.Library.Test
+namespace Emceelee.Math.Expression.Test
 {
     [TestClass]
     public class ExpressionEvaluationTest
@@ -289,7 +289,7 @@ namespace Expression.Library.Test
         [TestMethod]
         public void ExpressionBase_Evaluation_AdvancedCalc1()
         {
-            var expression = -(ExpressionBase)2.0 * "x" * 5 / new Multiply(3, new Inverse((Variable)"x" + 4.2),"t") + new Variable("t")/4.3 - Math.PI;
+            var expression = -(ExpressionBase)2.0 * "x" * 5 / new Multiply(3, new Inverse((Variable)"x" + 4.2),"t") + new Variable("t")/4.3 - System.Math.PI;
             // = -2*0.5*5/ (3 * 1/4.7 * 1.3)+1.3/4.3-3.141592653589
             // = -5 / (3.9/4.7) + 1.3/4.3 - 3.141592653589
             // = -23.5/3.9 + 1.3/4.3 - 3.141592653589

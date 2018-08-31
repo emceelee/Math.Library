@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Expression.Library
+namespace Emceelee.Math.Expression
 {
     public class Constant : ExpressionBase
     {

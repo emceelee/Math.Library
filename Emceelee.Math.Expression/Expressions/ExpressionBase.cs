@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 
-namespace Expression.Library
+namespace Emceelee.Math.Expression
 {
     public abstract class ExpressionBase
     {

@@ -4,30 +4,30 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Expression.Library
+namespace Emceelee.Math.Expression
 {
-    public class Variable : ExpressionBase
+    public class Inverse : ExpressionBase
     {
-        public string Token { get; private set; }
+        public ExpressionBase Expression { get; private set; }
 
-        public Variable(string token)
+        public Inverse(ExpressionBase expression)
         {
-            Token = token;
+            Expression = expression;
         }
 
         public override double Evaluate(VariableReplacements replacements)
         {
-            return replacements.GetReplacement(Token);
+            return 1 / Expression.Evaluate(replacements);
         }
 
         public override IEnumerable<Variable> Variables()
         {
-            yield return this;
+            return Expression.Variables();
         }
 
         public override string ToString()
         {
-            return Token.ToString();
+            return "1/" + Expression.ToString();
         }
     }
 }

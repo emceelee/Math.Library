@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace Expression.Library
+namespace Emceelee.Math.Expression
 {
     public class Divide : ExpressionBase
     {
