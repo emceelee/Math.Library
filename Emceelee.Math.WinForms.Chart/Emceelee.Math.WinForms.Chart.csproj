@@ -79,5 +79,19 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Emceelee.Math.Calculus\Emceelee.Math.Calculus.csproj">
+      <Project>{1624cf56-0002-4f34-a105-874968ffd79f}</Project>
+      <Name>Emceelee.Math.Calculus</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Emceelee.Math.Expression\Emceelee.Math.Expression.csproj">
+      <Project>{b72c7047-395c-4e5d-ab9b-99b710abd7f7}</Project>
+      <Name>Emceelee.Math.Expression</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Emceelee.Math.Shared\Emceelee.Math.Shared.csproj">
+      <Project>{8660f1ef-adb1-42c1-b86c-811e01107b3d}</Project>
+      <Name>Emceelee.Math.Shared</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -1,10 +1,11 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>netcoreapp1.1</TargetFramework>
+    <TargetFrameworks>net452;netcoreapp1.1</TargetFrameworks>
   </PropertyGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Emceelee.Math.Expression\Emceelee.Math.Expression.csproj" />
     <ProjectReference Include="..\Emceelee.Math.Shared\Emceelee.Math.Shared.csproj" />
   </ItemGroup>
 

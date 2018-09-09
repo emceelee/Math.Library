@@ -5,6 +5,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Emceelee.Math.Interpolation\Emceelee.Math.Interpolation.csproj" />
     <ProjectReference Include="..\Emceelee.Math.Shared\Emceelee.Math.Shared.csproj" />
   </ItemGroup>
 

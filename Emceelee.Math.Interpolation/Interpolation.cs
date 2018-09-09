@@ -9,8 +9,8 @@ namespace Emceelee.Math.Interpolation
 {
     public abstract class Interpolation : IFunction
     {
-        protected List<Point> _dataSet = new List<Point>();
-        protected List<IFunction> _formulas = new List<IFunction>();
+        private List<Point> _dataSet = new List<Point>();
+        protected List<PiecewiseFunction> _functions = new List<PiecewiseFunction>();
 
         private bool _initialized = false;
 
@@ -28,20 +28,43 @@ namespace Emceelee.Math.Interpolation
 
         public double Evaluate(double x)
         {
-            double y = 0;
             if (!_initialized)
             {
                 Initialize();
+                _initialized = true;
                 //For n points, we should have n-1 interpolation functions
-                Debug.Assert(_formulas.Count() == (_dataSet.Count() - 1));
+                Debug.Assert(_functions.Count() == (_dataSet.Count() - 1));
             }
 
-            if (x < DomainMin || x > DomainMax)
+            /*
+            double domainLength = DomainMax - DomainMin;
+            if (x < DomainMin - domainLength * 0.01 || x > DomainMax + domainLength * 0.01)
             {
                 throw new ArgumentOutOfRangeException($"{x} does not fall within the domain of [{DomainMin},{DomainMax}]");
             }
+            */
 
-            return y;
+            var function = _functions.FirstOrDefault();
+
+            if (x <= function.Domain.Min)
+            {
+                return function.Evaluate(x);
+            }
+
+            function = _functions.OrderByDescending(f => f.Domain.Max).FirstOrDefault();
+            if(x >= function.Domain.Max)
+            {
+                return function.Evaluate(x);
+            }
+            
+            function = _functions.FirstOrDefault(f => f.Domain.IsValid(x));
+            if(function != null)
+            {
+                return function.Evaluate(x);
+            }
+
+            Debug.Assert(false);
+            return 0;
         }
 
         public double DomainMin
@@ -52,6 +75,14 @@ namespace Emceelee.Math.Interpolation
         public double DomainMax
         {
             get { return _dataSet.Max(p => p.X); }
+        }
+
+        protected List<Point> DataSet
+        {
+            get
+            {
+                return _dataSet;
+            }
         }
     }
 }

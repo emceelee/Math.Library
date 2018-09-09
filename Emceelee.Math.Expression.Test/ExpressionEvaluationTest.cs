@@ -296,6 +296,38 @@ namespace Emceelee.Math.Expression.Test
         }
 
         [TestMethod]
+        public void ExpressionBase_Evaluation_Cos()
+        {
+            var expression = new Cos(0);
+
+            Assert.AreEqual(1, expression.Evaluate(_replacements));
+        }
+
+        [TestMethod]
+        public void ExpressionBase_Evaluation_Cos_x()
+        {
+            var expression = new Cos("x");
+
+            Assert.AreEqual(0.87758256189, expression.Evaluate(_replacements), 0.00000000001);
+        }
+
+        [TestMethod]
+        public void ExpressionBase_Evaluation_Sin()
+        {
+            var expression = new Sin(System.Math.PI / 2);
+
+            Assert.AreEqual(1, expression.Evaluate(_replacements));
+        }
+
+        [TestMethod]
+        public void ExpressionBase_Evaluation_Sin_x()
+        {
+            var expression = new Sin("x");
+
+            Assert.AreEqual(0.47942553860, expression.Evaluate(_replacements), 0.00000000001);
+        }
+
+        [TestMethod]
         public void ExpressionBase_Evaluation_AdvancedCalc1()
         {
             var expression = -(ExpressionBase)2.0 * "x" * 5 / new Multiply(3, new Inverse((Variable)"x" + 4.2),"t") + new Variable("t")/4.3 - System.Math.PI;
