@@ -2,6 +2,7 @@ using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 using Emceelee.Math.Expression;
+using Emceelee.Math.Shared;
 using System.Collections.Generic;
 
 namespace Emceelee.Math.Expression.Test
@@ -37,6 +38,14 @@ namespace Emceelee.Math.Expression.Test
             ExpressionBase expression = new Variable("x");
 
             Assert.AreEqual(0.5, expression.Evaluate(_replacements));
+        }
+
+        [TestMethod]
+        public void ExpressionBase_IFunction_Evaluation_Constant_IFunction()
+        {
+            IFunction expression = new Variable("y");
+
+            Assert.AreEqual(0.75, expression.Evaluate(0.75));
         }
 
         [TestMethod]

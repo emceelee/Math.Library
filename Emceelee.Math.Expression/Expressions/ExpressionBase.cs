@@ -2,11 +2,24 @@
 using System.Collections.Generic;
 using System.Linq;
 
+using Emceelee.Math.Shared;
+
 namespace Emceelee.Math.Expression
 {
-    public abstract class ExpressionBase
+    public abstract class ExpressionBase : IFunction
     {
         public abstract double Evaluate(VariableReplacements replacements);
+
+        public double Evaluate(double value)
+        {
+            var replacements = new List<VariableReplacement>();
+            foreach(Variable v in Variables())
+            {
+                replacements.Add(new VariableReplacement(v.Token, value));
+            }
+
+            return Evaluate(new VariableReplacements(replacements));
+        }
 
         public abstract IEnumerable<Variable> Variables();
 

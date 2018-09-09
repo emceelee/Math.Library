@@ -1,11 +1,9 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
-
   <PropertyGroup>
     <TargetFramework>netcoreapp1.1</TargetFramework>
+    <RootNamespace>Emceelee.Math.Shared</RootNamespace>
   </PropertyGroup>
-
   <ItemGroup>
-    <ProjectReference Include="..\Emceelee.Math.Shared\Emceelee.Math.Shared.csproj" />
+    <Compile Remove="IFormula.cs" />
   </ItemGroup>
-
 </Project>

@@ -14,7 +14,7 @@ namespace Emceelee.Math.Expression
         {
             _replacements = new Dictionary<string, VariableReplacement>();
         }
-        public VariableReplacements(List<VariableReplacement> replacements)
+        public VariableReplacements(IEnumerable<VariableReplacement> replacements)
         {
             _replacements = replacements.ToDictionary(vr => vr.Token, vr => vr);
         }

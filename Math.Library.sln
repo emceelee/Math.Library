@@ -7,6 +7,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Emceelee.Math.Expression", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Emceelee.Math.Expression.Test", "Emceelee.Math.Expression.Test\Emceelee.Math.Expression.Test.csproj", "{71936B66-FE79-4C6A-B19D-E1A7B507DCFD}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Emceelee.Math.Interpolation", "Emceelee.Math.Interpolation\Emceelee.Math.Interpolation.csproj", "{B37AEDF4-5646-4C0F-A842-B0B682A40E20}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Emceelee.Math.Shared", "Emceelee.Math.Shared\Emceelee.Math.Shared.csproj", "{8660F1EF-ADB1-42C1-B86C-811E01107B3D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +25,14 @@ Global
 		{71936B66-FE79-4C6A-B19D-E1A7B507DCFD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{71936B66-FE79-4C6A-B19D-E1A7B507DCFD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{71936B66-FE79-4C6A-B19D-E1A7B507DCFD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B37AEDF4-5646-4C0F-A842-B0B682A40E20}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B37AEDF4-5646-4C0F-A842-B0B682A40E20}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B37AEDF4-5646-4C0F-A842-B0B682A40E20}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B37AEDF4-5646-4C0F-A842-B0B682A40E20}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8660F1EF-ADB1-42C1-B86C-811E01107B3D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8660F1EF-ADB1-42C1-B86C-811E01107B3D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8660F1EF-ADB1-42C1-B86C-811E01107B3D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8660F1EF-ADB1-42C1-B86C-811E01107B3D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
