@@ -7,7 +7,7 @@ using Emceelee.Math.Shared;
 
 namespace Emceelee.Math.Interpolation
 {
-    public abstract class Interpolation
+    public abstract class Interpolation : IFunction
     {
         protected List<Point> _dataSet = new List<Point>();
         protected List<IFunction> _formulas = new List<IFunction>();
@@ -26,7 +26,7 @@ namespace Emceelee.Math.Interpolation
 
         protected abstract void Initialize();
 
-        public Point Interpolate(double x)
+        public double Evaluate(double x)
         {
             double y = 0;
             if (!_initialized)
@@ -36,12 +36,12 @@ namespace Emceelee.Math.Interpolation
                 Debug.Assert(_formulas.Count() == (_dataSet.Count() - 1));
             }
 
-            if(x < DomainMin || x > DomainMax)
+            if (x < DomainMin || x > DomainMax)
             {
                 throw new ArgumentOutOfRangeException($"{x} does not fall within the domain of [{DomainMin},{DomainMax}]");
             }
 
-            return new Point(x, y);
+            return y;
         }
 
         public double DomainMin
